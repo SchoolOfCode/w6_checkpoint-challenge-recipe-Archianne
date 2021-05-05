@@ -1,23 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Fetch</title>
-  </head>
+<head>
+  <script src="https://kit.fontawesome.com/8a7df27cab.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fetch Recipe</title>
+</head>
+
   <body>
-    <section id="recipe-section">
-      <h2 class="section-heading">Welcome to the Recipe Finder!</h2>
-      <input
-        aria-label="food-input"
-        id="food-input"
-        onchange="handleFoodChange()"
-      />
-      <button id="recipe-button" onclick="handleRecipeClick()">
-        Give me a recipe!
-      </button>
-      <a id="recipe-label"></a>
-    </section>
+    <section id="recipeSection">
+      <div class="container initial">
+        <h1 class="sectionHeading">Recipe App</h1>
+        <form>
+          <input type="text" placeholder="Search"  id="foodInput">
+        </form>
+        <button id="recipe-button" onclick="handleRecipeClick()">
+          <i class="fa fa-search" aria-hidden="true"></i>
+        </button>
+        <div class="searchResult">
+
     <script src="./main.js"></script>
   </body>
 </html>
