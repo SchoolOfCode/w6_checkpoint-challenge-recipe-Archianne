@@ -31,21 +31,21 @@ function handleFood(results) {
   results.map((foodResult) => {
     foodList += `
     
-    <div class="item">
+    <div class="items">
       <img src="${foodResult.recipe.image}" alt="img">
-    <div class="flex-container">
+    <div class="resultsDisplay">
     <h2 class="title">${foodResult.recipe.label}</h2>
-    <a class="view-btn" target="_blank" href="${foodResult.recipe.url}">View Recipe</a>
-    <p class="item-data">Number of servings: ${
-      foodResult.recipe.yield
-    }
+    <a class="viewLink" target="_blank" href="${foodResult.recipe.url}">View Recipe</a>
     </p>
     </div>
-    <p class="item-data">Calories: ${
+      <p class="itemInfo">Number of servings: ${
+        foodResult.recipe.yield
+      }
+    <p class="itemInfo">Calories: ${
       foodResult.recipe.calories.toFixed(2)
     }
     </p>
-    <p class="item-data">Diet label: ${
+    <p class="itemInfo">Diet label: ${
       foodResult.recipe.dietLabels.length > 0 ? foodResult.recipe.dietLabels : "No Data Found"
     } 
     </p>
