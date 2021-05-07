@@ -1,5 +1,5 @@
 const searchForm = document.querySelector("form");
-const input = document.querySelector("#foodInput")
+const input = document.querySelector("#foodInput");
 const searchResult = document.querySelector(".searchResult");
 const container = document.querySelector(".container");
 let foodToSearch = null;
@@ -9,9 +9,9 @@ const APP_ID = "acf6c552";
 const APP_key = "382791db90157c92aaabdea59f48f996";
 
 //addEventListener
-  searchForm.addEventListener("submit", handleRecipeClick);
-  
-  function handleRecipeClick(e) {
+searchForm.addEventListener("submit", handleRecipeClick);
+
+function handleRecipeClick(e) {
   e.preventDefault();
   foodToSearch = input.value;
   fetchRecipe();
@@ -32,21 +32,23 @@ function handleFood(results) {
     foodList += `
     
     <div class="items">
-      <img src="${foodResult.recipe.image}" alt="img">
+    <a target="_blank" href="${foodResult.recipe.url}"><img src="${
+      foodResult.recipe.image
+    }" alt="${foodResult.recipe.label}"></a>
     <div class="resultsDisplay">
     <h2 class="title">${foodResult.recipe.label}</h2>
-    <a class="viewLink" target="_blank" href="${foodResult.recipe.url}">View Recipe</a>
+    <a class="viewLink" target="_blank" href="${
+      foodResult.recipe.url
+    }">View Recipe</a>
     </p>
     </div>
-      <p class="itemInfo">Number of servings: ${
-        foodResult.recipe.yield
-      }
-    <p class="itemInfo">Calories: ${
-      foodResult.recipe.calories.toFixed(2)
-    }
+      <p class="itemInfo">Number of servings: ${foodResult.recipe.yield}
+    <p class="itemInfo">Calories: ${foodResult.recipe.calories.toFixed(2)}
     </p>
     <p class="itemInfo">Diet label: ${
-      foodResult.recipe.dietLabels.length > 0 ? foodResult.recipe.dietLabels : "No Data Found"
+      foodResult.recipe.dietLabels.length > 0
+        ? foodResult.recipe.dietLabels
+        : "Not found"
     } 
     </p>
     </div>

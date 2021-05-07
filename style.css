@@ -13,6 +13,18 @@
   padding: 20px;
 }
 
+h1 {
+    text-align: center;
+    font-family: "Lobster", cursive;
+    font-size: 40px;
+    margin-bottom: 20px;
+    color: #003b6f;
+  }
+  
+  #h1span {
+      color: #ff4500;
+  }
+
 p,
 a {
   font-family: "Times New Roman", Times, serif;
@@ -27,6 +39,7 @@ h2 {
   font-size: 20px;
   width: 100%;
   background: white;
+  color: #003b6f;
 }
 
 section {
@@ -36,14 +49,6 @@ section {
   justify-content: center;
   padding: 100px 0;
   background-color: whitesmoke;
-}
-
-.sectionHeading {
-  text-align: center;
-  font-family: "Lobster", cursive;
-  font-size: 40px;
-  margin-bottom: 20px;
-  color: #003b6f;
 }
 
 input {
@@ -84,7 +89,7 @@ img {
   background: white;
   padding: 5px;
   overflow: hidden;
-}
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;}
 
 .items img {
     width: 100%;
@@ -100,6 +105,7 @@ img {
 }
 
 .resultsDisplay {
+    padding: 0 5px 0 10px;
     width: 100%;
   display: flex;
   align-items: center;
@@ -108,16 +114,18 @@ img {
 }
 
 .viewLink {
+    align-self: flex-start;
     font-family: "Bebas Neue";
+    font-weight: bold;
     letter-spacing: 1px;
-    background: #003b6f;
-    color: whitesmoke;
+    color: orangered;
+    background: white;
     padding: 5px;
     text-align: right;
     width: 90px;
-    align-self: flex-start;
 }
 
 .itemInfo {
     background: white;
+    padding: 0 10px;
 }
