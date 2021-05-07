@@ -27,11 +27,12 @@ h1 {
 
 p,
 a {
-  font-family: "Times New Roman", Times, serif;
-  font-size: 12px;
-  line-height: 1.5rem;
+  font-family: "Poppins";
+  font-size: 10px;
+  line-height: 1rem;
   text-decoration: none;
   color: #333;
+  text-transform: uppercase;
 }
 
 h2 {
@@ -40,6 +41,8 @@ h2 {
   width: 100%;
   background: white;
   color: #003b6f;
+  text-transform: capitalize;
+  margin-bottom: 10px;
 }
 
 section {
@@ -117,7 +120,7 @@ img {
 .viewLink {
   align-self: flex-start;
   font-family: "Bebas Neue";
-  font-weight: bold;
+  font-weight: 600;
   letter-spacing: 1px;
   color: orangered;
   background: white;
