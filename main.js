@@ -15,6 +15,7 @@ function handleRecipeClick(e) {
   e.preventDefault();
   foodToSearch = input.value;
   fetchRecipe();
+  input.value = "";
 }
 
 //async function
@@ -28,9 +29,9 @@ async function fetchRecipe() {
 function handleFood(results) {
   container.classList.remove("initial");
   let foodList = "";
+
   results.map((foodResult) => {
     foodList += `
-    
     <div class="items">
     <a target="_blank" href="${foodResult.recipe.url}"><img src="${
       foodResult.recipe.image
@@ -54,7 +55,7 @@ function handleFood(results) {
     </div>
     `;
   });
-
+  
   //add result to html
   searchResult.innerHTML = foodList;
 }
