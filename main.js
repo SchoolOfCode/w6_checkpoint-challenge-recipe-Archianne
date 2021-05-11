@@ -8,6 +8,7 @@ const APP_ID = "c1d6ad2a";
 const APP_key = "0e527f7e2659b24d39614a3dc27b79e6";
 
 function handleRecipeClick() {
+  searchResult.innerHTML = "";
   fetchRecipe(foodToSearch);
 }
 
@@ -26,7 +27,7 @@ input.addEventListener("keyup", function(event) {
 //async function
 async function fetchRecipe(food) {
   foodToSearch = food;
-  const requestUrl = `https://api.edamam.com/search?q=${foodToSearch}&app_id=${APP_ID}&app_key=${APP_key}&from=0&to=3`;
+  const requestUrl = `https://api.edamam.com/search?q=${foodToSearch}&app_id=${APP_ID}&app_key=${APP_key}&from=0&to=9`;
   const response = await fetch(requestUrl);
   const data = await response.json();
   handleFood(data.hits);
