@@ -21,20 +21,23 @@
 </head>
 
   <body>
-    <section id="recipeSection">
+    <section id="recipe-section">
       <div class="container">
-        <h1 class="sectionHeading">
+
+        <h1 class="section-heading">
           <span id="h1span">Fetch</span>
           <i class="fas fa-utensils"></i>
           Recipes</h1>
-        <form>
-          <input type="text" placeholder="Search" id="foodInput">
-          <button id="recipeButton" onclick="handleRecipeClick()">
+
+        <input aria-label="food-input" 
+        id="food-input"
+        placeholder="Enter your ingredient"
+        onchange="handleFoodChange()"/>
+        <button id="recipe-button" onclick="handleRecipeClick()">
             <i class="fa fa-search" aria-hidden="true"></i>
-          </button>
-        </form>
-        <div class="searchResult">
-</div>
+        </button>
+     
+      <div class="search-result"></div>
 
     <script src="./main.js"></script>
   </body>
