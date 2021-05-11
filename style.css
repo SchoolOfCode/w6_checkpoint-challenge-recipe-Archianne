@@ -5,6 +5,16 @@
   background: whitesmoke;
 }
 
+.background-cover {
+  height: 200px;
+  background-size: cover;
+  background-image: url("https://www.indiaimagine.com/wp-content/uploads/2019/08/Indian_Food_Cover.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+
+}
+
 .container {
   width: 100%;
   height: 90%;
