@@ -7,3 +7,4 @@ async function getRandomPicture() {
   backgroundCover.style.backgroundImage = `url(${data.image})`;
 }
 getRandomPicture();
+

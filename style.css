@@ -30,6 +30,8 @@ h1 {
   margin-bottom: 50px;
   color: #003b6f;
   border-radius: 50%;
+  padding: 30px;
+  border-top: solid 3px #003b6f;
 }
 
 #h1span {
