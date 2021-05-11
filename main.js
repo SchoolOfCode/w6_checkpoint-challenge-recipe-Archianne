@@ -11,51 +11,46 @@ const APP_key = "382791db90157c92aaabdea59f48f996";
 //addEventListener
 searchForm.addEventListener("submit", handleRecipeClick);
 
-function handleRecipeClick(e) {
-  e.preventDefault();
+function handleRecipeClick(event) {
+  event.preventDefault();
   foodToSearch = input.value;
-  fetchRecipe();
   input.value = "";
+  fetchRecipe();
 }
 
 //async function
 async function fetchRecipe() {
-  const baseURL = `https://api.edamam.com/search?q=${foodToSearch}&app_id=${APP_ID}&app_key=${APP_key}&from=0&to=20`;
-  const response = await fetch(baseURL);
+  const requestUrl = `https://api.edamam.com/search?q=${foodToSearch}&app_id=${APP_ID}&app_key=${APP_key}&from=0&to=18`;
+  const response = await fetch(requestUrl);
   const data = await response.json();
   handleFood(data.hits);
 }
 
 function handleFood(results) {
-  container.classList.remove("initial");
-  let foodList = "";
 
-  results.map((foodResult) => {
-    foodList += `
+  results.map((foodToSearch) => {
+    searchResult.innerHTML += `
     <div class="items">
-    <a target="_blank" href="${foodResult.recipe.url}"><img src="${
-      foodResult.recipe.image
-    }" alt="${foodResult.recipe.label}"></a>
+    <a target="_blank" href="${foodToSearch.recipe.url}"><img src="${
+      foodToSearch.recipe.image
+    }" alt="${foodToSearch.recipe.label}"></a>
     <div class="resultsDisplay">
-    <h2 class="title">${foodResult.recipe.label}</h2>
+    <h2 class="title">${foodToSearch.recipe.label}</h2>
     <a class="viewLink" target="_blank" href="${
-      foodResult.recipe.url
+      foodToSearch.recipe.url
     }">View Recipe</a>
     </p>
     </div>
-      <p class="itemInfo">Number of servings: ${foodResult.recipe.yield}
-    <p class="itemInfo">Calories: ${foodResult.recipe.calories.toFixed(2)}
+      <p class="itemInfo">Number of servings: ${foodToSearch.recipe.yield}
+    <p class="itemInfo">Calories: ${foodToSearch.recipe.calories.toFixed(2)}
     </p>
     <p class="itemInfo">Diet label: ${
-      foodResult.recipe.dietLabels.length > 0
-        ? foodResult.recipe.dietLabels
+      foodToSearch.recipe.dietLabels.length > 0
+        ? foodToSearch.recipe.dietLabels
         : "Not found"
     } 
     </p>
     </div>
     `;
   });
-  
-  //add result to html
-  searchResult.innerHTML = foodList;
 }
