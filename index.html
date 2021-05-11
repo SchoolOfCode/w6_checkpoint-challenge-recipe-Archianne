@@ -33,6 +33,7 @@
           <i class="fas fa-utensils"></i>
           Recipes</h1>
 
+  <div class="inputs">
         <input aria-label="food-input" 
         id="food-input"
         placeholder="Enter your ingredient"
@@ -40,7 +41,12 @@
         <button id="recipe-button" onclick="handleRecipeClick()">
             <i class="fa fa-search" aria-hidden="true"></i>
         </button>
-     
+
+        <button id="cocktail-button" onclick="randomCocktail()">
+         <span>Bottoms up? </span><i class="fas fa-cocktail"></i>
+      </button>
+    </div>
+
       <div class="search-result"></div>
 
       <div class="cocktail-result"></div>

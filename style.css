@@ -38,7 +38,7 @@ h1 {
 }
 
 p,
-a {
+a, li {
   font-family: "Poppins";
   font-size: 10px;
   line-height: 1rem;
@@ -66,11 +66,19 @@ section {
   background-color: whitesmoke;
 }
 
+/* input & buttons */
+.inputs {
+  display: flex;
+  flex-direction: row;
+justify-content: center;
+align-items: center;
+}
+
 input {
   border: 1px solid #003b6f;
   border-radius: 10px;
   color: #003b6f;
-  width: 90%;
+  width: 60%;
   height: 30px;
   padding-left: 10px;
   background: white;
@@ -91,8 +99,67 @@ input:focus {
   background: none;
   font-size: 20px;
   color: #003b6f;
+  margin-left: 5px;
 }
 
+
+/* cocktail */
+.cocktail-result {
+  width: 100%;
+  max-width: 300px;
+  margin: 30px auto 0;
+}
+
+#cocktail-button {
+  margin-left: 30px;
+  cursor: pointer;
+  width: 15%;
+  height: 30px;
+  border: none;
+  background: #003b6f;
+  font-size: 15px;
+  color: whitesmoke;
+  font-family: "Bebas Neue";
+  letter-spacing: 1px;
+}
+
+#cocktail-button > span {
+  background: transparent;
+}
+
+.fa-cocktail {
+  color: tomato;
+  background: transparent;
+}
+
+.cocktail-result {
+  width: 100%;
+  text-align: center;
+}
+
+#cocktail-picture {
+  width: 150px;
+  border-radius: 50%;
+  border: white solid 5px;
+}
+
+#cocktail-title {
+  background: none;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  padding: 5px 0;
+  font-size: 12px;
+  border-bottom: 1px solid white;
+}
+
+/* recipe results */
 img {
   width: 100%;
   height: 100%;
@@ -146,12 +213,17 @@ img {
   padding: 0 10px;
 }
 
-@media (max-width: 768px) {
+/* mediaquery */
+@media only screen and (max-width: 600px)  {
   .search-result {
     grid-gap: 10px;
   }
 
   h2 {
     font-size: 1.3em;
+  }
+
+  #cocktail-button > span {
+    display: none;
   }
 }
